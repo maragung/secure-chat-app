@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+      "target": "es5", // Specifies the ECMAScript target version
+      "lib": ["dom", "dom.iterable", "esnext"], // List of library files to be included in the compilation
+      "allowJs": true, // Allows JavaScript files to be compiled
+      "skipLibCheck": true, // Skips type checking of all declaration files (*.d.ts)
+      "strict": true, // Enables all strict type-checking options
+      "forceConsistentCasingInFileNames": true, // Disallows inconsistently-cased references to the same file
+      "noEmit": true, // Do not emit output (meaning Babel handles transpilation)
+      "esModuleInterop": true, // Enables emit interoperability between CommonJS and ES Modules
+      "module": "esnext", // Specifies module code generation
+      "moduleResolution": "node", // Specifies module resolution strategy
+      "resolveJsonModule": true, // Enables importing .json files
+      "isolatedModules": true, // Ensures that each file can be safely transpiled without relying on other imports
+      "jsx": "preserve", // Preserves JSX in the output to be further processed by another transpiler (like Babel)
+      "incremental": true, // Enables incremental compilation
+      "baseUrl": ".", // Base directory to resolve non-absolute module names
+      "paths": {
+        "@/*": ["./*"] // Path mapping: "@/*" will refer to the root directory "./*"
+      }
+    },
+    "include": [ // Specifies an array of filenames or patterns to include in the program
+      "next-env.d.ts", // Next.js environment type definitions
+      "**/*.ts", // All .ts files
+      "**/*.tsx", // All .tsx files
+      "pages/api/socket.js" // Including the JS API route explicitly if needed for TS checks on JS files
+    ],
+    "exclude": [ // Specifies an array of filenames or patterns that should be skipped when resolving include
+      "node_modules" // Exclude the node_modules directory
+    ]
+  }
+  

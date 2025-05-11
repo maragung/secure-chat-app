@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Theme Variables */
+    --color-background-light: 255 255 255; /* white */
+    --color-foreground-light: 15 23 42; /* slate-900 */
+    --color-card-light: 255 255 255; /* white */
+    --color-border-light: 226 232 240; /* slate-200 */
+    --color-primary-light: 15 23 42; /* slate-900 */
+    --color-primary-foreground-light: 248 250 252; /* slate-50 */
+    --color-secondary-light: 241 245 249; /* slate-100 */
+    --color-secondary-foreground-light: 51 65 85; /* slate-700 */
+
+    /* Dark Theme Variables */
+    --color-background-dark: 3 7 18; /* slate-950 */
+    --color-foreground-dark: 248 250 252; /* slate-50 */
+    --color-card-dark: 15 23 42; /* slate-900 */
+    --color-border-dark: 30 41 59; /* slate-800 */
+    --color-primary-dark: 248 250 252; /* slate-50 */
+    --color-primary-foreground-dark: 15 23 42; /* slate-900 */
+    --color-secondary-dark: 30 41 59; /* slate-800 */
+    --color-secondary-foreground-dark: 160 174 192; /* slate-300 */
+  }
+
+  .dark {
+    --color-background-light: var(--color-background-dark);
+    --color-foreground-light: var(--color-foreground-dark);
+    --color-card-light: var(--color-card-dark);
+    --color-border-light: var(--color-border-dark);
+    --color-primary-light: var(--color-primary-dark);
+    --color-primary-foreground-light: var(--color-primary-foreground-dark);
+    --color-secondary-light: var(--color-secondary-dark);
+    --color-secondary-foreground-light: var(--color-secondary-foreground-dark);
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* For Webkit scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-secondary dark:bg-dark_secondary rounded-md;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-400 dark:bg-slate-600 rounded-md;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-500 dark:bg-slate-500;
+}
